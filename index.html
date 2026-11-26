@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#f5f8f6" />
+    <title>Samawa Farma — Sistem Apotek</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <section class="auth-screen" id="auth-screen">
+      <form class="auth-card" id="login-form">
+        <a class="brand auth-brand" href="#" aria-label="Samawa Farma">
+          <span class="brand-mark"><span></span><span></span></span>
+          <span class="brand-copy"><strong>samawa<span>farma</span></strong><small>PHARMACY SYSTEM</small></span>
+        </a>
+        <div class="eyebrow">SELAMAT DATANG</div>
+        <h1>Masuk ke akun Anda</h1>
+        <p>Gunakan akun apotek yang sudah disiapkan administrator.</p>
+        <div class="auth-error" id="login-error" role="alert"></div>
+        <label class="field"><span>Email</span><input id="login-email" type="email" autocomplete="username" required maxlength="190" placeholder="nama@apotek.id"/></label>
+        <label class="field"><span>Kata sandi</span><input id="login-password" type="password" autocomplete="current-password" required maxlength="200" placeholder="Masukkan kata sandi"/></label>
+        <button class="button" type="submit" id="login-submit">Masuk <span>→</span></button>
+        <small>Pastikan Anda mengakses aplikasi melalui jaringan apotek yang aman.</small>
+      </form>
+    </section>
+    <div class="app-shell" id="app-shell" hidden>
+      <aside class="sidebar" id="sidebar">
+        <a class="brand" href="#" aria-label="Samawa Farma dashboard">
+          <span class="brand-mark"><span></span><span></span></span>
+          <span class="brand-copy"><strong>samawa<span>farma</span></strong><small>PHARMACY SYSTEM</small></span>
+        </a>
+        <div class="workspace-label">WORKSPACE</div>
+        <nav class="navigation" aria-label="Navigasi utama">
+          <button class="nav-link active" data-page="dashboard"><span class="nav-icon">⌂</span>Dashboard</button>
+          <div class="nav-section">INVENTARIS</div>
+          <button class="nav-link" data-page="obat"><span class="nav-icon">▤</span>Master Obat</button>
+          <button class="nav-link" data-page="stok"><span class="nav-icon">▦</span>Stok &amp; Batch <span class="nav-count" id="expiry-count">0</span></button>
+          <button class="nav-link" data-page="masuk"><span class="nav-icon">↙</span>Barang Masuk</button>
+          <div class="nav-section">TRANSAKSI</div>
+          <button class="nav-link" data-page="ecer"><span class="nav-icon">▣</span>Kasir Ecer</button>
+          <button class="nav-link" data-page="grosir"><span class="nav-icon">▧</span>Penjualan Grosir</button>
+          <div class="nav-section">LAPORAN</div>
+          <button class="nav-link" data-page="kartu"><span class="nav-icon">≋</span>Kartu Stok</button>
+          <button class="nav-link" data-page="users" id="users-nav" hidden><span class="nav-icon">♙</span>Akun Pengguna</button>
+        </nav>
+        <div class="sidebar-bottom">
+          <div class="help-card"><div class="help-icon">✳</div><strong>Butuh bantuan?</strong><p>Hubungi tim support kami untuk bantuan penggunaan.</p><a href="mailto:support@samawafarma.id">Hubungi support <span>↗</span></a></div>
+          <button class="password-button" id="password-button">Ubah kata sandi</button>
+          <button class="profile-button" id="logout-button"><span class="avatar" id="profile-initials">AN</span><span class="profile-copy"><strong id="profile-name">Administrator</strong><small id="profile-role">Admin</small></span><span class="more">↪</span></button>
+        </div>
+      </aside>
+
+      <main class="main-content">
+        <header class="topbar">
+          <button class="mobile-menu" id="mobile-menu" aria-label="Buka navigasi">☰</button>
+          <div class="breadcrumbs"><span>Samawa Farma</span><i>/</i><strong id="breadcrumb-current">Dashboard</strong></div>
+          <div class="topbar-actions"><div class="today-chip"><span class="live-dot"></span><span id="today-label"></span></div><button class="icon-button notification-button" aria-label="Notifikasi">♧<span class="notification-dot"></span></button><span class="topbar-avatar">AN</span></div>
+        </header>
+        <section class="page-container" id="page-container"></section>
+        <footer class="footer"><span>© 2025 Samawa Farma</span><span>Sistem Informasi Apotek <i>•</i> v1.0.0</span></footer>
+      </main>
+    </div>
+    <div class="toast-region" id="toast-region" aria-live="polite"></div>
+    <div class="modal-layer" id="modal-layer"></div>
+    <script src="app.js"></script>
+  </body>
+</html>

@@ -1,0 +1,22 @@
+{
+  "name": "samawa-farma",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Sistem informasi operasional Apotek Samawa Farma",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "db:init": "node scripts/init-db.js",
+    "test": "node --test"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "dependencies": {
+    "bcryptjs": "^3.0.2",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "helmet": "^8.0.0",
+    "mysql2": "^3.12.0"
+  }
+}
